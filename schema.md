@@ -23,6 +23,7 @@
     * [BillingAddress](#billingaddress)
     * [CalculatedItem](#calculateditem)
     * [CalculatedPlanCost](#calculatedplancost)
+    * [CampaignView](#campaignview)
     * [Category](#category)
     * [ChangePlanResult](#changeplanresult)
     * [Column](#column)
@@ -101,6 +102,7 @@
     * [CreateAccountInput](#createaccountinput)
     * [CreateArticleContentInput](#createarticlecontentinput)
     * [CreateArticleInput](#createarticleinput)
+    * [CreateCampaignViewInput](#createcampaignviewinput)
     * [CreateCategoryInput](#createcategoryinput)
     * [CreateDataFieldInput](#createdatafieldinput)
     * [CreateDataFieldLanguageLabelInput](#createdatafieldlanguagelabelinput)
@@ -184,6 +186,7 @@
     * [UpdateArticleContentInput](#updatearticlecontentinput)
     * [UpdateArticleInput](#updatearticleinput)
     * [UpdateBillingAddressInput](#updatebillingaddressinput)
+    * [UpdateCampaignViewInput](#updatecampaignviewinput)
     * [UpdateCreditCardInfoInput](#updatecreditcardinfoinput)
     * [UpdateDataFieldInput](#updatedatafieldinput)
     * [UpdateDataFieldValueInput](#updatedatafieldvalueinput)
@@ -214,6 +217,7 @@
     * [AppTheme](#apptheme)
     * [ApplyPolicy](#applypolicy)
     * [ArticleDefaultLayout](#articledefaultlayout)
+    * [CampaignFields](#campaignfields)
     * [CampaignSendStatus](#campaignsendstatus)
     * [CardDeclineReason](#carddeclinereason)
     * [Charset](#charset)
@@ -726,6 +730,21 @@
 <tr>
 <td colspan="2" valign="top"><strong>fileViews</strong></td>
 <td valign="top">[<a href="#fileview">FileView</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>campaignView</strong></td>
+<td valign="top"><a href="#campaignview">CampaignView</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>campaignViews</strong></td>
+<td valign="top">[<a href="#campaignview">CampaignView</a>!]</td>
 <td></td>
 </tr>
 </tbody>
@@ -1627,6 +1646,36 @@
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>createCampaignView</strong></td>
+<td valign="top"><a href="#campaignview">CampaignView</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">input</td>
+<td valign="top"><a href="#createcampaignviewinput">CreateCampaignViewInput</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateCampaignView</strong></td>
+<td valign="top"><a href="#campaignview">CampaignView</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">input</td>
+<td valign="top"><a href="#updatecampaignviewinput">UpdateCampaignViewInput</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteCampaignView</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -1692,37 +1741,65 @@
 <tr>
 <td colspan="2" valign="top"><strong>streetAddressLine1</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td></td>
+<td>
+
+Gets or sets the address.
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>streetAddressLine2</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>
+
+Gets or sets the address2.
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>city</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td></td>
+<td>
+
+Gets or sets the city.
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>state_Province</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td></td>
+<td>
+
+Gets or sets the region.
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>zip_PostalCode</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>
+
+Gets or sets the postal code.
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>country_Region</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td></td>
+<td>
+
+Gets or sets the country.
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>website</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>
+
+Gets or sets the website url.
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>phone</strong></td>
@@ -2797,6 +2874,106 @@
 </tbody>
 </table>
 
+### CampaignView
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sendStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sendEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>groupBy</strong></td>
+<td valign="top"><a href="#campaignfields">CampaignFields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sortBy</strong></td>
+<td valign="top"><a href="#campaignfields">CampaignFields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>isPrivate</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>statuses</strong></td>
+<td valign="top">[<a href="#campaignsendstatus">CampaignSendStatus</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdBy</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedBy</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### Category
 
 <table>
@@ -3384,7 +3561,7 @@
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
-<td valign="top"><a href="#long">Long</a>!</td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -3425,11 +3602,6 @@
 <tr>
 <td colspan="2" valign="top"><strong>isPrivate</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>userId</strong></td>
-<td valign="top"><a href="#long">Long</a></td>
 <td></td>
 </tr>
 <tr>
@@ -7207,7 +7379,7 @@ Should be set to 0 or null if new plan is monthly.
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
-255 character limit
+Unique name to reference the account. *Max length: 255*
 
 </td>
 </tr>
@@ -7402,6 +7574,80 @@ Must be a valid [culture code](https://docs.microsoft.com/en-us/bingmaps/rest-se
 <tr>
 <td colspan="2" valign="top"><strong>contentBodies</strong></td>
 <td valign="top">[<a href="#createarticlecontentinput">CreateArticleContentInput</a>!]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### CreateCampaignViewInput
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>statuses</strong></td>
+<td valign="top">[<a href="#campaignsendstatus">CampaignSendStatus</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sendStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sendEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>groupBy</strong></td>
+<td valign="top"><a href="#campaignfields">CampaignFields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sortBy</strong></td>
+<td valign="top"><a href="#campaignfields">CampaignFields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>isPrivate</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
 <td></td>
 </tr>
 </tbody>
@@ -9827,7 +10073,7 @@ Defaults to false if not passed.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>subscriberListId</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
+<td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -11074,6 +11320,85 @@ Must be a valid [culture code](https://docs.microsoft.com/en-us/bingmaps/rest-se
 25 character limit
 
 </td>
+</tr>
+</tbody>
+</table>
+
+### UpdateCampaignViewInput
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>statuses</strong></td>
+<td valign="top">[<a href="#campaignsendstatus">CampaignSendStatus</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sendStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sendEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modifiedEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdStartUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createdEndUtc</strong></td>
+<td valign="top"><a href="#datetime">DateTime</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>groupBy</strong></td>
+<td valign="top"><a href="#campaignfields">CampaignFields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>sortBy</strong></td>
+<td valign="top"><a href="#campaignfields">CampaignFields</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>isPrivate</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -12603,6 +12928,25 @@ SUSPEND status can only be set by a system user
 </tr>
 <tr>
 <td valign="top"><strong>PTL_TNA_CTR</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### CampaignFields
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>NAME</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>SEND_DATE</strong></td>
 <td></td>
 </tr>
 </tbody>
